@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Cart.css'
 
 const Cart = (props) => {
+    const [breaks, setBreaks] = useState([])
     const previousTime = props.cart;
-    // console.log(arr);
+    
     let sum = 0;
     for(const totalTime of previousTime){
         sum = parseInt(sum) + parseInt(totalTime);
     }
-    console.log(sum)
+
+    
+
+   const handleButtonClick = (minute) => {
+        setBreaks(minute);
+
+   }
+//    console.log(breaks)
+
+
+   
     
     return (
         <div className='cart-container'>
@@ -33,14 +44,14 @@ const Cart = (props) => {
             {/* coach info end  */}
 
             <h2>Add a break: </h2>
-            <button className='btn-break'>10 m</button>
-            <button className='btn-break'>20 m</button>
-            <button className='btn-break'>30 m</button>
-            <button className='btn-break'>40 m</button>
+            <button onClick={() => handleButtonClick(10)} className='btn-break'>10 m</button>
+            <button onClick={() => handleButtonClick(20)} className='btn-break'>20 m</button>
+            <button onClick={() => handleButtonClick(30)} className='btn-break'>30 m</button>
+            <button onClick={() => handleButtonClick(40)} className='btn-break'>40 m</button>
 
             <h2>Gameplay details:</h2>
             <h4>Game Time: {sum}</h4>
-            <h4>Break: </h4>
+            <h4>Break: {breaks}</h4>
 
             <button className='btn-game'>Game Played</button>
             
