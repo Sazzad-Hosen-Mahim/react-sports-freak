@@ -2,8 +2,13 @@ import React from 'react';
 import './Cart.css'
 
 const Cart = (props) => {
-    const arr = props.cart;
-    console.log(arr);
+    const previousTime = props.cart;
+    // console.log(arr);
+    let sum = 0;
+    for(const totalTime of previousTime){
+        sum = parseInt(sum) + parseInt(totalTime);
+    }
+    console.log(sum)
     
     return (
         <div className='cart-container'>
@@ -34,7 +39,7 @@ const Cart = (props) => {
             <button className='btn-break'>40 m</button>
 
             <h2>Gameplay details:</h2>
-            <h4>Game Time: </h4>
+            <h4>Game Time: {sum}</h4>
             <h4>Break: </h4>
 
             <button className='btn-game'>Game Played</button>
