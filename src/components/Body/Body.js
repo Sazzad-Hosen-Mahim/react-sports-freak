@@ -6,12 +6,26 @@ import './Body.css'
 
 const Body = () => {
     const [elements, setElements] = useState([]);
+    const [cart, setCart] = useState([]);
 
     useEffect(() => {
         fetch('data.json')
         .then(res => res.json())
         .then(data => setElements(data))
     },[])
+
+    
+
+    const handleAddToCart = (props) => {
+        // console.log(props);
+
+    }
+
+    useEffect(() => {
+        
+
+    }, [])
+    
     
     return (
         <div className='element-container'>
@@ -20,6 +34,7 @@ const Body = () => {
                     elements.map(element => 
                         <Element element={element}
                         key={element.id}
+                        handleAddToCart={handleAddToCart}
                         ></Element>
                         )
                 }

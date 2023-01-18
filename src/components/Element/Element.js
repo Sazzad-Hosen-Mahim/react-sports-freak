@@ -4,8 +4,8 @@ import React from 'react';
 import './Element.css'
 
 const Element = (props) => {
-    const element = props.element;
-    console.log(element);
+    const {element, handleAddToCart} = props;
+    
     const { name, description, age, time, img} = element
     return (
         <div className='container'>
@@ -18,7 +18,7 @@ const Element = (props) => {
                 <p>Time Required: {time}</p>
             </div>
             </div>
-            <button className='btn'>
+            <button onClick={() => handleAddToCart(element)} className='btn'>
                 <p className='btn-text'>Play</p>
                 <FontAwesomeIcon icon={faPlusCircle}/>
 
