@@ -1,7 +1,10 @@
 import React from 'react';
 import './Cart.css'
 
-const Cart = () => {
+const Cart = (props) => {
+    const arr = props.cart;
+    console.log(arr);
+    
     return (
         <div className='cart-container'>
             <h3>Coach: Sazzad Mahim</h3>

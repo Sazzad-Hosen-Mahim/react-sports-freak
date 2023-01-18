@@ -7,6 +7,9 @@ import './Body.css'
 const Body = () => {
     const [elements, setElements] = useState([]);
     const [cart, setCart] = useState([]);
+    // const previousTime = cart;
+    // const previousTimeInt = parseInt(previousTime);
+    // console.log(time);
 
     useEffect(() => {
         fetch('data.json')
@@ -14,18 +17,56 @@ const Body = () => {
         .then(data => setElements(data))
     },[])
 
-    
+    // console.log(elements);
 
     const handleAddToCart = (props) => {
-        // console.log(props);
+       
+        const time = props.time
+        // console.log(time)
+        
+        let newTime = [];
+
+        newTime.push(time);
+        // cart.push(time)
+        const newNewTime = [...cart, newTime];
+
+        // console.log(newTime);
+        // const newNewTime = [...cart, newTime]
+        
+        
+        setCart(newNewTime);
 
     }
+    // console.log(cart);
+
+    
+//   console.log(cart);
+//   console.log(typeof(cart))
 
     useEffect(() => {
         
+        
+        // console.log(cart)
 
+        
+
+        // let previousTime = 0
+        // for(const eachTime of cart){
+        //     previousTime = parseInt(eachTime) + previousTime;
+        // }
+        // emptyArr.push(previousTime);
+        // console.log(previousTime); 
+        
+
+        // setCart(previousTime)
+        // console.log(typeof(emptyArr));
+        // const newArr = [...cart, emptyArr];
+
+        
+
+        // setCart(newArr)
     }, [])
-    
+    // console.log(cart);
     
     return (
         <div className='element-container'>
@@ -41,7 +82,7 @@ const Body = () => {
 
             </div>
             <div>
-                <Cart></Cart>
+                <Cart cart={cart}></Cart>
             </div>
            
           
