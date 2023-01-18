@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Cart.css'
 
 const Cart = (props) => {
@@ -12,10 +12,22 @@ const Cart = (props) => {
 
     
 
+    
+
    const handleButtonClick = (minute) => {
+    const min = minute;
+    localStorage.setItem('break', JSON.stringify(min))
         setBreaks(minute);
 
    }
+
+   useEffect(()=> {
+    let getItem = localStorage.getItem('break');
+    const parsedGetItem = JSON.parse(getItem);
+    console.log(parsedGetItem)
+    setBreaks(parsedGetItem);
+
+   },[])
 
 
 
