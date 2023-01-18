@@ -1,0 +1,42 @@
+.cart-container{
+    height: 800px;
+    background-color: rgb(10, 122, 173);
+    padding: 15px;
+    top: 0;
+    position: sticky;
+    color: whitesmoke;
+}
+.coach-info{
+    border-radius: 10px;
+    display: flex;
+    background-color: rgb(15, 6, 6);
+}
+.margiin{
+    margin: auto;
+    padding: 10px;
+}
+.btn-break{
+    background-color: rgb(252, 249, 84);
+    border-radius: 15%;
+    padding: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+.btn-break:hover{
+    background-color: rgb(69, 190, 69);
+    color: white;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.btn-game{
+    font-weight: 700;
+    font-size: medium;
+    background-image: linear-gradient(rgb(116, 255, 248), rgb(255, 37, 226));
+    padding: 10px;
+    border-radius: 7px;
+    border: none;
+    width: 100%;
+}
+.btn-game:hover{
+    background-image: linear-gradient(rgb(252, 95, 90), rgb(235, 34, 151));
+}
