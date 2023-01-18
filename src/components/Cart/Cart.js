@@ -16,7 +16,7 @@ const Cart = (props) => {
         setBreaks(minute);
 
    }
-//    console.log(breaks)
+
 
 
    
@@ -41,7 +41,7 @@ const Cart = (props) => {
 
             </div>
 
-            {/* coach info end  */}
+           
 
             <h2>Add a break: </h2>
             <button onClick={() => handleButtonClick(10)} className='btn-break'>10 m</button>
