@@ -1,10 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import './Cart.css'
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const Cart = (props) => {
     const [breaks, setBreaks] = useState([])
     const previousTime = props.cart;
     
+    
+    const notify = () => {
+       toast("Congratulations..!! You have played games.")
+    }
+
+
+
     let sum = 0;
     for(const totalTime of previousTime){
         sum = parseInt(sum) + parseInt(totalTime);
@@ -30,8 +40,7 @@ const Cart = (props) => {
    },[])
 
 
-
-   
+  
     
     return (
         <div className='cart-container'>
@@ -64,9 +73,9 @@ const Cart = (props) => {
             <h2 className='game-play'>Game Play details:</h2>
             <h4>Game Time: {sum}</h4>
             <h4>Break: {breaks}</h4>
-
-            <button className='btn-game'>Game Played</button>
             
+            <button onClick={notify} className='btn-game'>Game Played</button>
+            <ToastContainer />
         </div>
     );
 };
