@@ -61,7 +61,7 @@ const Cart = (props) => {
             <button onClick={() => handleButtonClick(30)} className='btn-break'>30 m</button>
             <button onClick={() => handleButtonClick(40)} className='btn-break'>40 m</button>
 
-            <h2>Gameplay details:</h2>
+            <h2 className='game-play'>Game Play details:</h2>
             <h4>Game Time: {sum}</h4>
             <h4>Break: {breaks}</h4>
 

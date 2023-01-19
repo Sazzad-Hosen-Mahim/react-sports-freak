@@ -11,6 +11,12 @@
     display: flex;
     background-color: rgb(15, 6, 6);
 }
+.game-play{
+    background-color: rgb(72, 255, 112);
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+}
 .margiin{
     margin: auto;
     padding: 10px;
